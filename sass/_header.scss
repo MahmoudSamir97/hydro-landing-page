@@ -1,0 +1,213 @@
+.header{    
+    position: fixed;
+    z-index: 1000;
+    padding: 30px 60px;
+    top:0;
+    right: 0;
+    left: 0;
+
+    @include breakpoints-down(medium){
+        justify-content: space-between;
+
+        background-color: $white;
+        padding: 10px 60px;
+        a{
+            color: $blackParagraph;
+        }
+    }
+
+    &__nav{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        @include breakpoints-down(medium){
+         justify-content: space-between;
+        }
+    }
+
+    &__logo{
+        font-size: 27px;
+        font-weight: 700;
+        letter-spacing: -1px;
+        @include breakpoints-down(medium){
+            font-size: 22px;
+            font-weight: 700;
+           }
+    }
+    &__links{
+        display: flex;
+        padding: 1rem;
+        a{
+            font-size: 14px;
+            font-weight: 500;
+            // letter-spacing: -0.5px;
+            position: relative;
+            transition: all 0.35s ease-in-out;
+            &::before{
+                content: "";
+                position: absolute;
+                height: 4px;
+                bottom: -20px;
+                left: 0;
+                right: 0;
+                width: 100%;
+                transition: all 0.35s ease-in-out;
+            }
+            &:hover{
+                color: $darkRed;
+                &::before{
+                    background-color: $darkRed;
+                }
+            }
+
+            @include breakpoints-down(medium){
+                display: none;
+            }
+        }
+        a:not(:last-child){
+                margin-right: 3rem;
+            }
+        }
+
+        &__burger-btn{
+
+            @include breakpoints-down(medium){
+                cursor: pointer;
+            
+                span{
+                    display: block;
+                    width: 28px;
+                    height: 3px;
+                    margin-bottom:4px;
+                    background-color: #000000;
+                    transition: all 0.25s ease-in-out;
+                }
+                &.change{
+                    span:nth-child(1){
+                        transform: translate(0, 7px) rotate(-45deg);
+                    } 
+                    span:nth-child(2){
+                        opacity:0;
+                    } 
+                    span:nth-child(3){
+                        transform: translate(0, -7px) rotate(45deg);
+                    } 
+                }
+            }
+
+        }
+
+        &__button{
+            padding: 0.85rem 1.35rem;
+            background-color: $darkRed;
+            border: none;
+            color: $white;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: background-color 0.2s ease-in-out;
+
+            &:hover{
+                background-color: #000 ;
+            }
+            @include breakpoints-down(medium){
+                display: none;
+            }
+        }
+    
+        .menu{
+            display: none;
+            @include breakpoints-down(medium){
+
+                position: fixed;
+                top: -300px;
+                left: 0;
+                right: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                height: 18rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.4s ease-in-out;
+        
+               
+        
+                &__links{
+                    width: 100%;
+                    height: 60%;
+                    text-align: center;
+        
+                    .nav__link{
+                        color: $blackParagraph;
+                        font-size: 13px;
+                        font-weight: 500;
+                        &:not(:last-child){
+                            margin-bottom: .85rem;
+                        }
+                        &:hover{
+                            color: $darkRed;
+                        }
+                    }
+                }
+        
+                &__social-icons{
+                    display: flex;
+                    margin-bottom: 1rem;
+                    .icon:not(:last-child){
+                        margin-right: 1.7rem;
+                    }
+                    .icon:hover{
+                        color: $darkRed;
+                    }
+                }
+                &__btn{
+                    padding: 0.85rem 4rem;
+                    background-color: $darkRed;
+                    border: none;
+                    color: $white;
+                    font-size: 14px;
+                    font-weight: 500;
+                    border-radius: 50px;
+                    margin-bottom: 0;
+                    transition: background-color 0.2s ease-in-out;
+        
+                    &:hover{
+                        background-color: #000;
+                        color: #fff;
+                    }
+        
+                }
+            
+                &.open{
+                    top: 50px;
+                    background-color: inherit;
+                }
+            }
+    
+    }  
+}
+
+.header.change{
+    background-color: $white;
+    padding: 10px 60px;
+    
+    a{
+        color: $blackParagraph;
+    }
+    .header{
+
+        &__logo{
+        color: #252525;
+        }
+        &__button{
+            color: $white;
+        }
+    }
+
+}
+
+
+

@@ -1,0 +1,126 @@
+.hero{
+    position: relative;
+    height: 100vh;
+    background: url(/dist/images/home-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &__overlay{
+        position: absolute;
+        background: $greenBackground ;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        opacity: 0.7;
+
+    }
+    h1{
+        color: $white;
+    }
+    &__video{
+        iframe{
+            width: 560px;
+            height: 315px;
+        
+        }
+
+        }
+
+    
+
+    &__main{
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 100;
+
+        @include breakpoints-down(medium){
+            flex-direction: column;
+        }
+
+    }
+
+    &__text{
+            max-width: 490px;
+           
+    }
+
+   
+    
+
+    &__flex{
+        width: 25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title{
+        font-size: 3rem;
+        font-weight: 300;
+        line-height: 1.42857143;
+        color: #ffff;
+     
+    }
+
+    &__btn{
+        border: 2px solid #fff;
+        display: inline-block;
+        width: 10.5rem;
+        height: 3.2rem;
+        font-size: 1rem;
+        text-align: center;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        transition:  0.2s ease-in-out;
+       
+        &:hover{
+            background-color: #ce3232;
+            border: none;
+        }
+      
+    }
+
+    &__paragraph{
+        max-width: 200px;
+        font-size: 14px;
+        color: #f9f9f9;
+    }
+}
+
+@media screen and (max-width: 1075px){
+    iframe{
+        width: 430px;
+        height: 290px;
+        padding: 0.5rem;
+
+    }
+    .hero__text{
+        width: 100%;
+        margin-left: 0.7rem ;
+    }
+
+    .hero__title{
+        max-width: 420px;
+        font-size: 2.5rem;
+    }
+
+}
+
+    
+    
+
+    
+
+
+
+
+

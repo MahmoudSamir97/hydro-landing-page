@@ -1,0 +1,17 @@
+// 640px , 1024px and up
+$up:("medium":700px, "large": 1024px );
+@mixin breakpoints-up($size){
+    @media screen and (min-width: map-get($up,$size)){
+        @content;
+    }
+};
+
+
+// 1023px, 639px and down
+$down: ("small": 639px, "medium": 900px );
+
+@mixin breakpoints-down($size){
+    @media screen and (max-width: map-get($down, $size)){
+        @content;
+    }
+};
