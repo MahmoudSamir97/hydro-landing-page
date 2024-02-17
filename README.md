@@ -1,2 +1,2 @@
 # hydro-landing-page
-making responsive landing page by using Sass and BEM style with some functionality with JavaScript.
+a responsive landing page, using Sass, BEM methodology, and adding functionality using JavaScript.
